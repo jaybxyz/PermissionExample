@@ -26,7 +26,8 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int type) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int type)
+    {
         View view = null;
         Context context = parent.getContext();
         float dp = context.getResources().getDisplayMetrics().density;
@@ -53,7 +54,8 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         return null;
     }
 
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position)
+    {
         final Item item = data.get(position);
         switch (item.type) {
             case HEADER:
@@ -100,16 +102,19 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
     @Override
-    public int getItemViewType(int position) {
+    public int getItemViewType(int position)
+    {
         return data.get(position).type;
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return data.size();
     }
 
-    private static class ListHeaderViewHolder extends RecyclerView.ViewHolder {
+    private static class ListHeaderViewHolder extends RecyclerView.ViewHolder
+    {
         public TextView header_title;
         public ImageView btn_expand_toggle;
         public Item refferalItem;
@@ -121,13 +126,15 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         }
     }
 
-    public static class Item {
+    public static class Item
+    {
         public int type;
         public String text;
         public List<Item> invisibleChildren;
 
 
-        public Item(int type, String text) {
+        public Item(int type, String text)
+        {
             this.type = type;
             this.text = text;
         }

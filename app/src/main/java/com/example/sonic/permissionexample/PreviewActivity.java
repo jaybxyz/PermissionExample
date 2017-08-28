@@ -99,10 +99,8 @@ public class PreviewActivity extends AppCompatActivity {
 
     Button.OnClickListener mOnClickListener = new View.OnClickListener() {
         public void onClick( View v ) {
-
-
-          if (v == btn_accept){
-
+          if (v == btn_accept)
+          {
               // Permission Check
               if (Build.VERSION.SDK_INT >= 23)
               {
@@ -115,17 +113,16 @@ public class PreviewActivity extends AppCompatActivity {
                   else
                   {
                       // Permissions are already granted
-
                       // You can implement here to have a custom dialog that explains why your app requires permissions
                   }
               }
-
           }
 
         }
     };
 
-    protected void grantPermission() {
+    protected void grantPermission()
+    {
         ActivityCompat.requestPermissions(this,
                 new String[]{Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.ACCESS_FINE_LOCATION},
@@ -134,31 +131,19 @@ public class PreviewActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
+                                           String permissions[], int[] grantResults)
+    {
         switch (requestCode) {
             case REQUEST_PERMISSION:
-
                 if (grantResults.length > 0 &&
                         grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
                     Log.i("TAG", "Permissions are granted");
-
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
-
                 } else {
-
                     Log.i("TAG", "Permissions are denied");
-
-
                 }
                 return;
         }
     }
-
-
-
-
-
-
 }
