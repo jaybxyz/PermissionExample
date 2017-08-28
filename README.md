@@ -1,7 +1,7 @@
 # PermissionExample
 This project is about how to request permissions at run time.
 
-I use expandable recyclerview to develop preview activity as below image.
+I use [ExpandableListViewDemo](https://github.com/anandbose/ExpandableListViewDemo) to develop preview activity as you can see the below image.
 
 In this example, I request Camera, Storage, and Location permissions.
 
